@@ -1,0 +1,36 @@
+---
+title: "Example Analysis"
+author: "Hansjörg Plieninger"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = "#>", fig.align = "center")
+```
+
+```{r}
+devtools::load_all(".")
+data(jackson)
+```
+
+## R Markdown
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+jackson[, 1:5]
+
+# The pipe %>% can be used because it is reexported, see file 'R/utils-pipe.R'.
+# ggplot2 can be used because the package lists it under Depends in file 'DESCRIPTION'.
+jackson %>% 
+    ggplot(aes(x = age)) +
+    geom_histogram(binwidth = 5) +
+    theme_light()
+
+# Function add_numbers can be used because it is defined in 'R/add_numbers.R'.
+add_numbers(42, pi)
+```

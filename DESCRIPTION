@@ -1,0 +1,25 @@
+Package: researchCompendium
+Title: A Research Compendium is Great to Organize Data, Code, and Writing With Respect to a Research Project
+Version: 0.1.0
+Authors@R: 
+    person(given = "Hansjörg",
+           family = "Plieninger",
+           role = c("aut", "cre"),
+           email = "plieninger@uni-mannheim.de")
+Description: A research compendium is a bundle of files and folders, that 
+    contains all the data, code, and writing with respect to a research project.
+    The package researchCompendium is an example of such a compendium in the
+    form of an R package. The sole purpose of this package is to illustrate the
+    proposed structure.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    magrittr,
+    here,
+    dplyr,
+    fs
+Depends: 
+    R (>= 3.2),
+    ggplot2
