@@ -14,7 +14,7 @@
 
 ## A Research Compendium is Great
 
-A research compendium is a bundle of files and folders, that contains
+A research compendium is a bundle of files and folders, which contains
 all the data, code, and writing with respect to a research project. A
 compendium in the form of an R package has several advantages:
 
@@ -74,7 +74,7 @@ fs::dir_tree(recurse = 2)
 
 #### Structure Similar to an R Package
 
-The following files and folder used in the compendium are part of the
+The following files and folders used in the compendium are part of the
 typical R package structure:
 
   - `data/`: Contains data files that are available when the package is
@@ -83,12 +83,13 @@ typical R package structure:
     to create the data in `data/`. Files should be unchanged files that
     you receive from elsewhere. These two folders are very important for
     reproducability and should be as self-contained as possible.
-  - `DESCRIPTION`: See for instance
+  - `DESCRIPTION`: See, for instance,
     <http://r-pkgs.had.co.nz/description.html>
   - `man/`: Contains documentation automatically created by
     `devtools::document()`.
   - `NAMESPACE`: File is automatically created when building the
-    package. (See for instance <http://r-pkgs.had.co.nz/namespace.html>)
+    package. (See, for instance,
+    <http://r-pkgs.had.co.nz/namespace.html>)
   - `R/`: Contains your R functions, add them using `use_r()`.
 
 #### Additional Parts
@@ -100,17 +101,17 @@ should use only few additional top-level folders, because the structure
 of the R package gets blurred otherwise.
 
 I tend to use the following three folders each containing as many files
-and sub-folders as you want:
+and sub-folders as I need:
 
   - `code/`: Folder contains mainly `.R`-files for analyses that are
-    complex, intermediate, or of minor importance. May contain, of
-    course, code written in other languages such as Stan or Python.
+    complex, preliminary, or of minor importance. May contain code
+    written in other languages such as Stan or Python.
   - `figures/`. Folder contains no sub-folders, contains all plots (PDF,
     PNG, etc.) that may be needed in writing.
-  - `report`: Folder contains any form of writing/documentation that you
-    create. This may be in the form of a paper or presentation, but may
-    also be an `.Rmd`-file that contains documentation and results of an
-    important analyses such that you can have a look at it in the
+  - `report/`: Folder contains any form of writing/documentation that
+    you create. This may be in the form of a paper or presentation, but
+    may also be an `.Rmd`-file that contains documentation and results
+    of an important analysis such that you can have a look at it in the
     future.
 
 ## Resources
@@ -119,12 +120,14 @@ and sub-folders as you want:
     analytical work reproducibly using R (and friends). *PeerJ
     Preprints*, *6*, e3192v2. doi:
     [10.7287/peerj.preprints.3192v2](https://doi.org/10.7287/peerj.preprints.3192v2)
-  - [exampleRPackage](https://github.com/mvuorre/exampleRPackage): In
+  - [exampleRPackage](https://github.com/mvuorre/exampleRPackage): “In
     our manuscript (not yet available), we describe why and how
     researchers might choose to share their research products as R
-    packages.
-  - [rmini](https://github.com/yihui/rmini): A minimal R package with
-    examples of most common components
+    packages.”
+  - [rmini](https://github.com/yihui/rmini): “A minimal R package with
+    examples of most common components”
+  - <http://kbroman.org/steps2rr/>: “Initial steps toward reproducible
+    research”
 
 ## Get Started
 
@@ -158,7 +161,7 @@ compendium in a similar vein:
 
 ### Workflow
 
-  - Add raw-data file in `data-raw/`. Create a script (via
+  - Add a raw-data file in `data-raw/`. Create a script (via
     `use_data_raw()`) to import the raw data and bring it into the shape
     that you need for analyses. Add the polished file to `data/` using
     `use_data()`.
@@ -169,7 +172,7 @@ compendium in a similar vein:
   - Load your package into memory via `devtools::load_all()`.
   - Add code and writing in folders `code/` or `report/`. Therein, you
     will use your data (attached via `data()`) and functions. Create
-    figures as needed and save them in `figures`.
+    figures as needed and save them in `figures/`.
 
 ## Alternatives
 
@@ -189,6 +192,9 @@ data set.) Alternative approaches are, for example:
 
 ## Misc
 
+  - [How to name
+    files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny
+    Bryan
   - Book [Happy Git and GitHub for the useR](https://happygitwithr.com/)
   - Package [here](https://here.r-lib.org/): A simpler way to find your
     files. See also [Ode to the here
